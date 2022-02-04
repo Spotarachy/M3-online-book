@@ -1,0 +1,12 @@
+@import url();
+
+*{
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+}
+
+/*--Footer--*/
+.Social-networks{
+    height: 90px;
+}
