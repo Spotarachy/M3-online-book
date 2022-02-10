@@ -6,6 +6,62 @@
     bottom: 0;
 }
 
+/*---Body----*/
+/*---Header---*/
+/*---Nav----*/
+
+
+
+
+/*----PY---*/
+/*---JS----*/
+
+
+
+
+/*--Media--*/
+
+
+@media only screen and (min-width:690px){
+    font-size: 80%;  
+}
+
+@media screen and (min-width:570px){
+    max-width: 900px;
+    
+}    
+
+@media  screen and (max-width:790px){
+    
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+@media only screen and (min-width:992px) {
+    .navbar-nav {
+        position: fixed;
+        text-align: center;
+    }
+
+    .home-article {
+        width: 50%;
+    }
+    
+}
+@media screen and (max-width: 568px) {
+    .rounded {
+        max-width: 100%;
+        height: auto;
+    }
+    .home-article {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+}
+
+
 /*--Footer--*/
 .Social-networks{
     height: 90px;
