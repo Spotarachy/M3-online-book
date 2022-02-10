@@ -7,6 +7,14 @@
 }
 
 /*---Body----*/
+
+.row-item {
+    margin: 0 0 30px 0 !important;
+}
+div {
+    padding: 0;
+    display: block;
+} 
 /*---Header---*/
 /*---Nav----*/
 
