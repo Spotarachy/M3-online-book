@@ -66,3 +66,96 @@
 .Social-networks{
     height: 90px;
 }
+    /*Footers*/
+
+    .footer-container-desktop {
+        background-color: #;
+        color: #;
+        margin-top: 90px;
+        height: 150px;
+    }
+    
+    .footer-container-desktop ul {
+        list-style: none;
+        text-align: left;
+        margin-top: 30px;
+    }
+    .footer-container-desktop il {
+        justify-content: center;
+        vertical-align: middle;
+        letter-spacing: 1px;
+        font-size: 21;
+    }
+    .footer-ctas {
+        float: left;
+    }
+    
+    .social-media-links {
+        float: right;
+        color: #;
+    }
+    
+    .social-media-links i, .social-media-links-mobile i, .social-media-links li span, .social-media-links-mobile li span {
+        color: #;
+    }
+    
+    .social-media-links li {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 40px;
+        padding: 21px;
+    }
+    
+    .footer-ctas-mobile {
+        color: #;
+        position: absolute;
+        background-color: #;
+        text-align: left;
+        height: 70px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-ctas-mobile {
+        padding: relative;
+        clear: both;
+        text-align: center;
+        padding: 21px;
+    }
+    
+    .footer-ctas-mobile a {
+        text-decoration: none;
+        color: navy;
+    }
+    
+    .footer-text-mobile {
+        position: relative;
+        clear: both;
+        padding: 0;
+        margin: 0;
+        background-color: #;
+        color: #;
+    }
+    
+    .social-media-links-mobile {
+        display: inline-flex;
+        margin: 0;
+        height: 21px;
+        width: 100px;
+        list-style: none;
+        margin-bottom: 35px;
+        text-align: center;
+        padding: 0;
+    }
+    
+    .social-media-links-mobile li {
+        display: inline-flex;
+        font-size: 21px;
+        margin: 0 auto;
+    }
+    
+    .footer-ctas a {
+        text-decoration: none;
+        color: #;
+    }
