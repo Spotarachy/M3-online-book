@@ -21,35 +21,41 @@
             </div>
         </div>
     </section>
-
-
+ 
 <header>
         <nav class="navbar  navbar-expand-lg navbar-dark bg-dark text-white h4 background-dark">
-            <div class="container-fluid">  
-                <a class="navbar-brand" href="index.html">
-                    <img src="" alt=""   width="" height="">
-                    <i class="fas fa-user-astronaut"></i>
-                        </a> 
-                            <button class="navbar-toggle hvr-grow" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigetion" data-targer="#navbarNav">
-                                 <span class="navbar-toggler-icon"></span>
-                            </button>
-    
-                            <div class="collapse navbar-collapse" id="navbarNav">   
+            <button class="navbar-toggle hvr-grow" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigetion" data-targer="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+                    <i class="fas fa-user-astronaut"></i> 
+                        </button>
+                            <div class="collapse navbar-collapse" id="navbar">
+                                <div class="navbar-nav">
+
+                                    {% if uesr.is_authenticated %}
+
+                                    <a class="nav_item nav-link" id="home" href="/">Home</a>
+                                <a class="nav_item nav-link" id="logout" href="/logout">Logout</a>
+
+                            {% else %}
+
+                        <a class="nav_item nav-link" id="login" href="/login">Login</a>
+                    <a class="nav_item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+
+                {% endif %}
+             </div>
+        </div>
+    </nav>
+</header>
+
+                        <!-- <div class="collapse navbar-collapse" id="navbar">   
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            
-                                <li class="nav-item">
+                            <li class="nav-item">
                             <a class="nav-link active" href="index.html"><span  id="menu">Home</span>
                             </a>
                         </li>
                     <li class="nav-item">
                 <a class ="nav-link active" href="guest.html">Guset</a>
-            </li>   
-          </div>
-        </div>
-      </nav>
-</header>
-
-
+            </li>   -->
 
     <div id="page-content">
         <div class="grid-content">
