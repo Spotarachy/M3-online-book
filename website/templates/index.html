@@ -44,16 +44,24 @@
  
     {% with messages = get_flashed_messeages(with_catgories=true) %}
     {% if messages %}
-        {% for messeage in messages %}
+        {% for category, messeage in messages %}
+        {% if category == 'error' %}
         <div class="alert alert-danger alert-dismissable fade show" role="alert">
             {{ message }}
             <button type="button" class="close" data-dismiss="alert">
+                <element class="sweetalert"></element>
                 Swal.getIcon()
             </button>
         </div>
-        {% endfor %}
-    {% endif %}    
-    {% endwith %}
+    {% else %}
+        <div class="alert alert-success alert-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert">
+                <element class="sweetalert"></element>
+                Swal.getIcon()
+            </button>
+        </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
                         <!-- <div class="collapse navbar-collapse" id="navbar">   
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
