@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <script src="https://kit.fontawesome.com/ad963c433a.js" crossorigin="anonymous"></script>
 
@@ -22,32 +23,37 @@
     </section>
  
 <header>
-        <nav class="navbar  navbar-expand-lg navbar-dark bg-dark text-white">
-            
-            <button class="navbar-toggler hvr-grow" type="button" data-bs-toggle="collapse" data-targer="#navbar" data-toggle="collapse">
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark text-white">
+        <button class="navbar-toggler hvr-grow" type="button" data-bs-toggle="collapse" data-targer="#navbar" data-toggle="collapse">
                 <span class="navbar-toggler-icon"></span>
                         </button>
-                        
                             <div class="collapse navbar-collapse" id="navbar">
                                 <div class="navbar-nav">
-
                                    <!-- {% if uesr.is_authenticated %} -->
                                     <i class="fas fa-user-astronaut"></i> 
-
                                     <a class="nav_item nav-link" id="home" href="/">Home</a>
                                 <a class="nav_item nav-link" id="logout" href="/logout">Logout</a>
-
                             <!-- {% else %} -->
-
                         <a class="nav_item nav-link" id="login" href="/login">Login</a>
                     <a class="nav_item nav-link" id="signUp" href="/sign-up">Sign Up</a>
-
                <!--- {% endif %} -->
              </div>
         </div>
     </nav>
 </header>
-
+ 
+    {% with messages = get_flashed_messeages(with_catgories=true) %}
+    {% if messages %}
+        {% for messeage in messages %}
+        <div class="alert alert-danger alert-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert">
+                Swal.getIcon()
+            </button>
+        </div>
+        {% endfor %}
+    {% endif %}    
+    {% endwith %}
                         <!-- <div class="collapse navbar-collapse" id="navbar">   
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
@@ -59,7 +65,7 @@
             </li>   -->
  <div class="container">
      {% block content %} {% endblock %}
- </div>
+ 
     <div id="page-content">
         <div class="grid-content">
             <h2 class="module-header">
@@ -202,8 +208,9 @@
          <p class="meta-creators">add</p>
       </div>
     </div>
+</div>
 
-    <footer>
+<footer>
         <div>
             <ul class="Social-networks">
                 <li>
@@ -218,7 +225,7 @@
                 </li>
             </ul>
         </div>
-    </footer>
+</footer>
 
     <script src="./index.js"></script>
     <script src=".index.py"></script>
