@@ -1,4 +1,4 @@
-from website import db
+from . import db
 from flask_login import UserMixin
 
 class Note(db.Model):

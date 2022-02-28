@@ -20,7 +20,8 @@ db.init_app(APP)
     APP.register_blueprint(views, url_prefix='/')
     APP.register_blueprint(auth, url_prefix='/')
     
-    create_database(APP)
+create_database(APP)
+
 
     return  APP
 def create_database(APP):
