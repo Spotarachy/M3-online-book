@@ -11,10 +11,7 @@
 .row-item {
     margin: 0 0 30px 0 !important;
 }
-div {
-    padding: 0;
-    display: block;
-} 
+
 /*---Header---*/
 /*---Nav----*/
 
@@ -31,7 +28,7 @@ div {
 
 
 @media only screen and (min-width:690px){
-    font-size: 80%;  
+    .font-size: 80%;
 }
 
 @media screen and (min-width:570px){
@@ -167,7 +164,7 @@ div {
         text-decoration: none;
         color: #;
     }
-    
+
     .sweetalert{
         {
             popup: 'swal2-show',
