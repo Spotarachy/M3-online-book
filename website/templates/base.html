@@ -29,14 +29,14 @@
                         </button>
                             <div class="collapse navbar-collapse" id="navbar">
                                 <div class="navbar-nav">
-                                   <!-- {% if uesr.is_authenticated %} -->
+                                    {% if uesr.is_authenticated %}
                                     <i class="fas fa-user-astronaut"></i> 
-                                    <a class="nav_item nav-link" id="home" href="/">Home</a>
-                                <a class="nav_item nav-link" id="logout" href="/logout">Logout</a>
-                            <!-- {% else %} -->
-                        <a class="nav_item nav-link" id="login" href="/login">Login</a>
-                    <a class="nav_item nav-link" id="signUp" href="/sign-up">Sign Up</a>
-               <!--- {% endif %} -->
+                                    <a class="nav_item nav-link" id="home" href="{{ url_for('index')}}">Home</a>
+                                <a class="nav_item nav-link" id="logout" href="{{ url_for('logout')}}">Logout</a>
+                             {% else %} 
+                        <a class="nav_item nav-link" id="login" href="{{ url_for('login')}}">Login</a>
+                    <a class="nav_item nav-link" id="sign_up" href="{{ url_for('sign_up')}}">Sign Up</a>
+               {% endif %}
              </div>
         </div>
     </nav>
@@ -74,152 +74,7 @@
                     <li class="nav-item">
                 <a class ="nav-link active" href="guest.html">Guset</a>
             </li>   -->
- <div class="container">
-     {% block content %} {% endblock %}
  
-    <div id="page-content">
-        <div class="grid-content">
-            <h2 class="module-header">
-            ::before
-            "New Addad"
-            ::after
-           </h2>
-        <div class="row MultiRow">
-            <div class="row-comic-issue" id="kdata-filter-content=" browse">
-                <div class="row-item comic-item">
-                    <a href="add"></a>
-                    <img src="./assets/image/covers/com13.jpg" class="rounded-end" alt="Addad later" title="addad">
-             </div>
-             <div class="row-item-text">
-                 <h5>ADD</h5>
-                 <p class="meta-creators">Add</p>
-             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row-item comic-item">
-        <div class="row-comic-image">
-            <a href="add"></a>
-                 <img src="./assets/image/covers/com2.jpg" class="rounded-end" alt="add" title="add">
-                  </div>
-               <div class="row-item-text">
-            <h5>add</h5>
-         <p class="meta-creators">add</p>
-      </div>
-    </div>
-
-    <div class="row-item comic-item">
-        <div class="row-comic-image">
-            <a href="add"></a>
-                 <img src="./assets/image/covers/com3.jpg" class="rounded-end" alt="add" title="add">
-                  </div>
-               <div class="row-item-text">
-            <h5>add</h5>
-         <p class="meta-creators">add</p>
-      </div>
-    </div>
-
-    <div class="row-item comic-item">
-        <div class="row-comic-image">
-            <a href="add"></a>
-                 <img src="./assets/image/covers/com4.jpg" class="rounded-end" alt="add" title="add">
-                  </div>
-               <div class="row-item-text">
-            <h5>add</h5>
-         <p class="meta-creators">add</p>
-      </div>
-    </div>
-
-    <div class="row-item comic-item">
-        <div class="row-comic-image">
-            <a href="add"></a>
-                 <img src="./assets/image/covers/com5.jpg" class="rounded-end" alt="add" title="add">
-                  </div>
-               <div class="row-item-text">
-            <h5>add</h5>
-         <p class="meta-creators">add</p>
-      </div>
-    </div>
-
-    <div class="row-item comic-item">
-        <div class="row-comic-image">
-            <a href="add"></a>
-                 <img src="./assets/image/covers/com6.jpg" class="rounded-end" alt="add" title="add">
-                  </div>
-               <div class="row-item-text">
-            <h5>add</h5>
-         <p class="meta-creators">add</p>
-      </div>
-    </div>
-
-    <div class="row-item comic-item">
-        <div class="row-comic-image">
-            <a href="add"></a>
-                 <img src="./assets/image/covers/com7.jpg" class="rounded-end" alt="add" title="add">
-                  </div>
-               <div class="row-item-text">
-            <h5>add</h5>
-         <p class="meta-creators">add</p>
-      </div>
-    </div>
-
-    <div class="row-item comic-item">
-        <div class="row-comic-image">
-            <a href="add"></a>
-                 <img src="./assets/image/covers/com8.jpg" class="rounded-end" alt="add" title="add">
-                  </div>
-               <div class="row-item-text">
-            <h5>add</h5>
-         <p class="meta-creators">add</p>
-      </div>
-    </div>
-
-    <div class="row-item comic-item">
-        <div class="row-comic-image">
-            <a href="add"></a>
-                 <img src="./assets/image/covers/com9.jpg" class="rounded-end" alt="add" title="add">
-                  </div>
-               <div class="row-item-text">
-            <h5>add</h5>
-         <p class="meta-creators">add</p>
-      </div>
-    </div>
-
-    <div class="row-item comic-item">
-        <div class="row-comic-image">
-            <a href="add"></a>
-                 <img src="./assets/image/covers/com10.jpg" class="rounded-end" alt="add" title="add">
-                  </div>
-               <div class="row-item-text">
-            <h5>add</h5>
-         <p class="meta-creators">add</p>
-      </div>
-    </div>
-
-    <div class="row-item comic-item">
-        <div class="row-comic-image">
-            <a href="add"></a>
-                 <img src="./assets/image/covers/com11.jpg" class="rounded-end" alt="add" title="add">
-                  </div>
-               <div class="row-item-text">
-            <h5>add</h5>
-         <p class="meta-creators">add</p>
-      </div>
-    </div>
-
-    <div class="row-item comic-item">
-        <div class="row-comic-image">
-            <a href="add"></a>
-                 <img src="./assets/image/covers/com14.jpg" class="rounded-end" alt="add" title="add">
-                  </div>
-               <div class="row-item-text">
-            <h5>add</h5>
-         <p class="meta-creators">add</p>
-      </div>
-    </div>
-</div>
 
 <footer>
         <div>
