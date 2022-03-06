@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script src="https://kit.fontawesome.com/ad963c433a.js" crossorigin="anonymous"></script>
+
+    <title>{% block title %}Home{% endblock %}</title>Comic.Con
+</head>
+<body>
+    <section>
+        <div class="background">
+            <div class="row">
+               <a href="./assets/image/hero/hero4.jpg"></a>
+            </div>
+        </div>
+    </section>
+ 
+<header>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark text-white">
+        <button class="navbar-toggler hvr-grow" type="button" data-bs-toggle="collapse" data-targer="#navbar" data-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+                        </button>
+                            <div class="collapse navbar-collapse" id="navbar">
+                                <div class="navbar-nav">
+                                   <!-- {% if uesr.is_authenticated %} -->
+                                    <i class="fas fa-user-astronaut"></i> 
+                                    <a class="nav_item nav-link" id="home" href="/">Home</a>
+                                <a class="nav_item nav-link" id="logout" href="/logout">Logout</a>
+                            <!-- {% else %} -->
+                        <a class="nav_item nav-link" id="login" href="/login">Login</a>
+                    <a class="nav_item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+               <!--- {% endif %} -->
+             </div>
+        </div>
+    </nav>
+</header>
+ 
+    {% with messages = get_flashed_messeages(with_catgories=true) %}
+    {% if messages %}
+        {% for category, messeage in messages %}
+        {% if category == 'error' %}
+        <div class="alert alert-danger alert-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert">
+                <element class="sweetalert"></element>
+                Swal.getIcon()
+            </button>
+        </div>
+    {% else %}
+        <div class="alert alert-success alert-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert">
+                <element class="sweetalert"></element>
+                Swal.getIcon()
+            </button>
+        </div>
+    {% endif %} 
+    {% endfor %} 
+    {% endif %} 
+    {% endwith %}
+                        <!-- <div class="collapse navbar-collapse" id="navbar">   
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                            <a class="nav-link active" href="index.html"><span  id="menu">Home</span>
+                            </a>
+                        </li>
+                    <li class="nav-item">
+                <a class ="nav-link active" href="guest.html">Guset</a>
+            </li>   -->
+ <div class="container">
+     {% block content %} {% endblock %}
+ 
+    <div id="page-content">
+        <div class="grid-content">
+            <h2 class="module-header">
+            ::before
+            "New Addad"
+            ::after
+           </h2>
+        <div class="row MultiRow">
+            <div class="row-comic-issue" id="kdata-filter-content=" browse">
+                <div class="row-item comic-item">
+                    <a href="add"></a>
+                    <img src="./assets/image/covers/com13.jpg" class="rounded-end" alt="Addad later" title="addad">
+             </div>
+             <div class="row-item-text">
+                 <h5>ADD</h5>
+                 <p class="meta-creators">Add</p>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-item comic-item">
+        <div class="row-comic-image">
+            <a href="add"></a>
+                 <img src="./assets/image/covers/com2.jpg" class="rounded-end" alt="add" title="add">
+                  </div>
+               <div class="row-item-text">
+            <h5>add</h5>
+         <p class="meta-creators">add</p>
+      </div>
+    </div>
+
+    <div class="row-item comic-item">
+        <div class="row-comic-image">
+            <a href="add"></a>
+                 <img src="./assets/image/covers/com3.jpg" class="rounded-end" alt="add" title="add">
+                  </div>
+               <div class="row-item-text">
+            <h5>add</h5>
+         <p class="meta-creators">add</p>
+      </div>
+    </div>
+
+    <div class="row-item comic-item">
+        <div class="row-comic-image">
+            <a href="add"></a>
+                 <img src="./assets/image/covers/com4.jpg" class="rounded-end" alt="add" title="add">
+                  </div>
+               <div class="row-item-text">
+            <h5>add</h5>
+         <p class="meta-creators">add</p>
+      </div>
+    </div>
+
+    <div class="row-item comic-item">
+        <div class="row-comic-image">
+            <a href="add"></a>
+                 <img src="./assets/image/covers/com5.jpg" class="rounded-end" alt="add" title="add">
+                  </div>
+               <div class="row-item-text">
+            <h5>add</h5>
+         <p class="meta-creators">add</p>
+      </div>
+    </div>
+
+    <div class="row-item comic-item">
+        <div class="row-comic-image">
+            <a href="add"></a>
+                 <img src="./assets/image/covers/com6.jpg" class="rounded-end" alt="add" title="add">
+                  </div>
+               <div class="row-item-text">
+            <h5>add</h5>
+         <p class="meta-creators">add</p>
+      </div>
+    </div>
+
+    <div class="row-item comic-item">
+        <div class="row-comic-image">
+            <a href="add"></a>
+                 <img src="./assets/image/covers/com7.jpg" class="rounded-end" alt="add" title="add">
+                  </div>
+               <div class="row-item-text">
+            <h5>add</h5>
+         <p class="meta-creators">add</p>
+      </div>
+    </div>
+
+    <div class="row-item comic-item">
+        <div class="row-comic-image">
+            <a href="add"></a>
+                 <img src="./assets/image/covers/com8.jpg" class="rounded-end" alt="add" title="add">
+                  </div>
+               <div class="row-item-text">
+            <h5>add</h5>
+         <p class="meta-creators">add</p>
+      </div>
+    </div>
+
+    <div class="row-item comic-item">
+        <div class="row-comic-image">
+            <a href="add"></a>
+                 <img src="./assets/image/covers/com9.jpg" class="rounded-end" alt="add" title="add">
+                  </div>
+               <div class="row-item-text">
+            <h5>add</h5>
+         <p class="meta-creators">add</p>
+      </div>
+    </div>
+
+    <div class="row-item comic-item">
+        <div class="row-comic-image">
+            <a href="add"></a>
+                 <img src="./assets/image/covers/com10.jpg" class="rounded-end" alt="add" title="add">
+                  </div>
+               <div class="row-item-text">
+            <h5>add</h5>
+         <p class="meta-creators">add</p>
+      </div>
+    </div>
+
+    <div class="row-item comic-item">
+        <div class="row-comic-image">
+            <a href="add"></a>
+                 <img src="./assets/image/covers/com11.jpg" class="rounded-end" alt="add" title="add">
+                  </div>
+               <div class="row-item-text">
+            <h5>add</h5>
+         <p class="meta-creators">add</p>
+      </div>
+    </div>
+
+    <div class="row-item comic-item">
+        <div class="row-comic-image">
+            <a href="add"></a>
+                 <img src="./assets/image/covers/com14.jpg" class="rounded-end" alt="add" title="add">
+                  </div>
+               <div class="row-item-text">
+            <h5>add</h5>
+         <p class="meta-creators">add</p>
+      </div>
+    </div>
+</div>
+
+<footer>
+        <div>
+            <ul class="Social-networks">
+                <li>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook-square"></i>
+                        </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener"><i class="fab fa-youtube-square"></i>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i>
+                </li>
+            </ul>
+        </div>
+</footer>
+
+    <script src="./index.js"></script>
+    <script src=".index.py"></script>
+    <script
+        type="text/javasript"
+        src="{{url_for('static', filename='index.js')}}">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+
+    </script>
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+      ></script>
+</body>
+</html>
