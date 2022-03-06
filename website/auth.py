@@ -43,10 +43,13 @@ def sign_up():
         flask('Email cant less then 3 chararcters.'category='Oops')
     elif len(first_name) < 2:
         flask('firstName cant less then 1 chararcters.'category='Oops Sorry')
+        
     elif password1 != password2:
         flask('password don\'t match.'category='Oops')
+
     elif len(password1) < 6:
         flask('Email cant less then 6 chararcters.'category='Oops Sorry')
+
     else:
         new_user = (email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
 
@@ -57,3 +60,4 @@ def sign_up():
     
         #add user to database
 return render_template("sign_up.html")
+
