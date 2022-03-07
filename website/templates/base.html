@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="website/static/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -29,23 +29,23 @@
                         </button>
                             <div class="collapse navbar-collapse" id="navbar">
                                 <div class="navbar-nav">
-                                    {% if uesr.is_authenticated %}
                                     <i class="fas fa-user-astronaut"></i> 
-                                    <a class="nav_item nav-link" id="home" href="{{ url_for('index')}}">Home</a>
-                                <a class="nav_item nav-link" id="logout" href="{{ url_for('logout')}}">Logout</a>
-                             {% else %} 
-                        <a class="nav_item nav-link" id="login" href="{{ url_for('login')}}">Login</a>
-                    <a class="nav_item nav-link" id="sign_up" href="{{ url_for('sign_up')}}">Sign Up</a>
-               {% endif %}
+                <a class="nav_item nav-link" id="home" href="{{ url_for('index') }}">Home</a>
+                <a class="nav_item nav-link" id="logout" href="{{ url_for('logout') }}">Logout</a>
+                            
+                 <a class="nav_item nav-link" id="login" href="{{ url_for('login') }}">Login</a>
+                <a class="nav_item nav-link" id="sign_up" href="{{ url_for('sign_up') }}">Sign Up</a>
+                <a class="nav_item nav-link" id="sign_up" href="{{ url_for('home') }}">Home</a>
+
              </div>
         </div>
     </nav>
 </header>
  
-    {% with messages = get_flashed_messeages(with_catgories=true) %}
-    {% if messages %}
-        {% for category, messeage in messages %}
-        {% if category == 'error' %}
+  {% block content %}
+     get inserted here
+  {% endblock %}
+
         <div class="alert alert-danger alert-dismissable fade show" role="alert">
             {{ message }}
             <button type="button" class="close" data-dismiss="alert">
@@ -64,16 +64,7 @@
     {% endif %} 
     {% endfor %} 
     {% endif %} 
-    {% endwith %}
-                        <!-- <div class="collapse navbar-collapse" id="navbar">   
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                            <a class="nav-link active" href="index.html"><span  id="menu">Home</span>
-                            </a>
-                        </li>
-                    <li class="nav-item">
-                <a class ="nav-link active" href="guest.html">Guset</a>
-            </li>   -->
+    {% endwith %
  
 
 <footer>
@@ -119,3 +110,4 @@
       ></script>
 </body>
 </html>
+{% endblock%}

@@ -1,8 +1,6 @@
 import os
 from flask import Flask, render_template
-from flask import Flask
 from flash_sqlalchemy import SQLAlchemy
-from os import path
 from flask_login import UserMixin
 from flask import Blueprint, render_template, request, flask, redirect, request, url_for, session, flash
 from flask_pymongo import PyMongo
@@ -10,8 +8,38 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from .Models import User
 from . import db
+
 bd = SQLAlchemy()
 DB_NAME = "database.db"
+
+app = Flask(__name__)
+
+
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
+@app.route("/index")
+def index():
+    return render_template("index.html")
+
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+
+@app.route("/sign_up")
+def sign_up():
+    return render_template("sing_up.html")
+
+
+if __name__ == "__main__":
+    app.run(
+        host=os.environ.get("IP", "0.0.0.0"),
+        prot=int(os.environ.geet("PORT", "5000")),
+        debug=True)
 
 
 class Note(db.Model):
@@ -38,39 +66,7 @@ class User(db.Model, UserMixin):
 
 bd = SQLAlchemy()
 DB_NAME = "database.db"
-app = Flask(__name__)
 
-@app.route("/")
-def index():
-    return render_template("base.html")
-
-
-@app.route("/addcomics")
-def addcomics():
-    return render_template("addcomics.html")
-
-
-@app.route("/index")
-def index():
-    return render_template("index.html")
-
-
-@app.route("/login")
-def login():
-    return render_template("login.html")
-
-
-@app.route("/sign_up")
-def sign_up():
-    return render_template("sing_up.html")
-
-
-
-if __name__ == "__app__":
-    app.run(
-        host=os.environ.get("IP", "0.0.0.0"),
-        prot=int(os.environ.geet("PORT", "5000")),
-        debug=True)
 
 
 app = Blueprint('app', __name__)
@@ -136,13 +132,13 @@ def create_app():
 db.init_app(app)
     
 
-    app.register_blueprint(views, url_prefix='/')
-    app.register_blueprint(auth, url_prefix='/')
+app.register_blueprint(views, url_prefix='/')
+app.register_blueprint(auth, url_prefix='/')
     
 create_database(APP)
 
 
-    return  app
+return app
 def create_database(APP):
     if not path.exists('website/ + DB_NAME'):
         db.create_all(APP=APP)
