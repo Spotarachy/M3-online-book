@@ -2,11 +2,11 @@ import os
 from flask import Flask, render_template
 from flash_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
-from flask import Blueprint, render_template, request, flask, redirect, request, url_for, session, flash
+from flask import url_for 
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from .Models import User
+from .app import User
 from . import db
 
 bd = SQLAlchemy()
@@ -67,8 +67,6 @@ class User(db.Model, UserMixin):
 bd = SQLAlchemy()
 DB_NAME = "database.db"
 
-
-
 app = Blueprint('app', __name__)
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -92,37 +90,27 @@ def sign_up():
         password2 = reques.form.get('password2')
 
     if len(email) < 4:
-        pass
+        flask('Email cant less then 3 chararcters.')
     elif len(first_name) < 2:
-        pass
-    elif password1 != password2:
-        pass
-    elif len(password1) < 6:
-        pass
-    else:
-        #add user to database
-
-    if len(email) < 4:
-        flask('Email cant less then 3 chararcters.'category='Oops')
-    elif len(first_name) < 2:
-        flask('firstName cant less then 1 chararcters.'category='Oops Sorry')
+        flask('firstName cant less then 1 chararcters.')
         
     elif password1 != password2:
-        flask('password don\'t match.'category='Oops')
+        flask('password don\'t match.')
 
     elif len(password1) < 6:
-        flask('Email cant less then 6 chararcters.'category='Oops Sorry')
+        flask('Email cant less then 6 chararcters.')
 
     else:
-        new_user = (email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
+        new_user = (email == email, first_name == first_name, password == generate_password_hash(password1, method='sha256'))
 
         db.session.add(new_user)
         db.session.commit()
         flash('Accoount created!', category='success')
-        return redirect(url_for('views.home'))
+
+    return redirect(url_for('views.home'))
     
         #add user to database
-return render_template("sign_up.html")
+    return render_template("sign_up.html")
 
 def create_app():
     app = Flask(__name__)
@@ -132,14 +120,8 @@ def create_app():
 db.init_app(app)
     
 
-app.register_blueprint(views, url_prefix='/')
-app.register_blueprint(auth, url_prefix='/')
+app.register(views, url_prefix='/')
+app.register(auth, url_prefix='/')
     
-create_database(APP)
+create_database(app)
 
-
-return app
-def create_database(APP):
-    if not path.exists('website/ + DB_NAME'):
-        db.create_all(APP=APP)
-        print('Created Database!')
