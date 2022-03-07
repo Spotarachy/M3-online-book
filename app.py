@@ -1,18 +1,18 @@
 import os
 from flask import Flask, render_template
-from flash_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 from flask import url_for 
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from .app import User
-from . import db
+# from .app import User
+# from . import db
 
-bd = SQLAlchemy()
+db = SQLAlchemy()
 DB_NAME = "database.db"
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='website/template')
 
 
 @app.route("/home")
@@ -20,7 +20,7 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/index")
+@app.route("/")
 def index():
     return render_template("index.html")
 
@@ -32,13 +32,13 @@ def login():
 
 @app.route("/sign_up")
 def sign_up():
-    return render_template("sing_up.html")
+    return render_template("sign_up.html")
 
 
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
-        prot=int(os.environ.geet("PORT", "5000")),
+        port=int(os.environ.get("PORT", "5000")),
         debug=True)
 
 
@@ -67,7 +67,7 @@ class User(db.Model, UserMixin):
 bd = SQLAlchemy()
 DB_NAME = "database.db"
 
-app = Blueprint('app', __name__)
+app = ('app', __name__)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

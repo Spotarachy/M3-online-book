@@ -31,7 +31,7 @@
                                 <div class="navbar-nav">
                                     <i class="fas fa-user-astronaut"></i> 
                 <a class="nav_item nav-link" id="home" href="{{ url_for('index') }}">Home</a>
-                <a class="nav_item nav-link" id="logout" href="{{ url_for('logout') }}">Logout</a>
+                <a class="nav_item nav-link" id="logout" href="{{ url_for('login') }}">Logout</a>
                             
                  <a class="nav_item nav-link" id="login" href="{{ url_for('login') }}">Login</a>
                 <a class="nav_item nav-link" id="sign_up" href="{{ url_for('sign_up') }}">Sign Up</a>
@@ -46,14 +46,14 @@
      get inserted here
   {% endblock %}
 
-        <div class="alert alert-danger alert-dismissable fade show" role="alert">
+      <!--  <div class="alert alert-danger alert-dismissable fade show" role="alert">
             {{ message }}
             <button type="button" class="close" data-dismiss="alert">
                 <element class="sweetalert"></element>
                 Swal.getIcon()
             </button>
         </div>
-    {% else %}
+    
         <div class="alert alert-success alert-dismissable fade show" role="alert">
             {{ message }}
             <button type="button" class="close" data-dismiss="alert">
@@ -61,11 +61,7 @@
                 Swal.getIcon()
             </button>
         </div>
-    {% endif %} 
-    {% endfor %} 
-    {% endif %} 
-    {% endwith %
- 
+    -->
 
 <footer>
         <div>
@@ -110,4 +106,3 @@
       ></script>
 </body>
 </html>
-{% endblock%}
