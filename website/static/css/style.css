@@ -13,6 +13,14 @@
 }
 
 /*---Header---*/
+
+#imageonly{
+    background: url('https://static.posters.cz/image/750webp/31869.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
 /*---Nav----*/
 
 
@@ -65,13 +73,25 @@
 
     }
 }
+   .social-media-links {
+    float: right;
+    color: #;
+}
 
+   .social-media-links i, .social-media-links-mobile i, .social-media-links li span, .social-media-links-mobile li span {
+    color: #;
+}
 
-/*--Footer--*/
-.Social-networks{
+   .social-media-links li {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 40px;
+    padding: 21px;
+}
+    .Social-networks{
     height: 90px;
 }
-    /*Footers*/
+/*Footers*/
 
     .footer-container-desktop {
         background-color: #;
@@ -94,27 +114,10 @@
     .footer-ctas {
         float: left;
     }
-    
-    .social-media-links {
-        float: right;
-        color: #;
-    }
-    
-    .social-media-links i, .social-media-links-mobile i, .social-media-links li span, .social-media-links-mobile li span {
-        color: #;
-    }
-    
-    .social-media-links li {
-        display: inline-block;
-        vertical-align: middle;
-        font-size: 40px;
-        padding: 21px;
-    }
-    
+
     .footer-ctas-mobile {
-        color: #;
+        
         position: absolute;
-        background-color: #;
         text-align: left;
         height: 70px;
         width: 100%;
@@ -139,8 +142,6 @@
         clear: both;
         padding: 0;
         margin: 0;
-        background-color: #;
-        color: #;
     }
     
     .social-media-links-mobile {
@@ -162,7 +163,6 @@
     
     .footer-ctas a {
         text-decoration: none;
-        color: #;
     }
 
     .sweetalert{

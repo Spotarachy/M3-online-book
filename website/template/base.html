@@ -14,14 +14,7 @@
     <title>{% block title %}Home{% endblock %}</title>Comic.Con
 </head>
 <body>
-    <section>
-        <div class="background">
-            <div class="row">
-               <a href="./assets/image/hero/hero4.jpg"></a>
-            </div>
-        </div>
-    </section>
- 
+
 <header>
     <nav class="navbar  navbar-expand-lg navbar-dark bg-dark text-white">
         <button class="navbar-toggler hvr-grow" type="button" data-bs-toggle="collapse" data-targer="#navbar" data-toggle="collapse">
@@ -31,34 +24,26 @@
                                 <div class="navbar-nav">
                                     <i class="fas fa-user-astronaut"></i> 
                 <a class="nav_item nav-link" id="home" href="{{ url_for('index') }}">Home</a>
-                <a class="nav_item nav-link" id="logout" href="{{ url_for('login') }}">Login</a>
+                <a class="nav_item nav-link" id="login" href="{{ url_for('login') }}">Login</a>
                 <a class="nav_item nav-link" id="sign_up" href="{{ url_for('sign_up') }}">Sign Up</a>
 
              </div>
         </div>
     </nav>
 </header>
+
+<section>
+    <div id="background-image">
+        <p style="background-image: url('https://static.posters.cz/image/750webp/31869.webp');">
+        </p>
+    
+        </div>
+    </div>
+</section>
  
   {% block content %}
      get inserted here
   {% endblock %}
-
-      <!--  <div class="alert alert-danger alert-dismissable fade show" role="alert">
-            {{ message }}
-            <button type="button" class="close" data-dismiss="alert">
-                <element class="sweetalert"></element>
-                Swal.getIcon()
-            </button>
-        </div>
-    
-        <div class="alert alert-success alert-dismissable fade show" role="alert">
-            {{ message }}
-            <button type="button" class="close" data-dismiss="alert">
-                <element class="sweetalert"></element>
-                Swal.getIcon()
-            </button>
-        </div>
-    -->
 
 <footer>
         <div>

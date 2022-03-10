@@ -1,12 +1,11 @@
-{% extends "base.html"%}
+{% extends "base.html" %} 
+{% block content %} 
 <!-- Opening the main page, to welcome visitors-->
 
 <div class="site-heading">
     <h1 class="main-font">welcome to your ComicCon</h1>
     <span class="subheading main-font"> Read, Post, & Share your own comics</span>
 </div>
-
-
 
 {% block content %}
 <!-- Bootstrap card layout for the data information-->
@@ -16,21 +15,18 @@
 
         <div class="card-control col-12 col-md-6 col-md-4">
             <div class="card p-3 mb-5 bg-body rounded shadow-effect" colur=" white">
-                <!--NOT complete-->
                 <h5 class="card-title text-center Danger-color">test</h5>
                 <img src="{{main_image}}" class="card-img-backGround index-img">
-                <!---->
-
                 <div class="card-body">
                     <p class="card-text">{{ comic.description }}</p>
                 </div>
                 <div class="comic-div">
-                    <a href="#" class="btn btn-denger rounded-end shadow-effect-white main-color-white" data-mdb-toggle="modal" data-mdb-target="#modal{{comic._id}}">Comic Info</a>
+                    <a href="#" class="btn btn-denger rounded-end shadow-effect-white main-color-white" data-mdb-toggle="modal" data-mdb-target="#modal{{comic_id}}">Comic Info</a>
                     {% include 'components/full-comics-modal.html' %}
                 </div>
             </div>
         </div>
-        {% endfor %}
+       {% endfor %}
     </div>
 </div>
 {% endblock %}
