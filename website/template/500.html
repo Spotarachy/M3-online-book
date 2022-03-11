@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block text_main_image %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+           <h1 class="#" id="">Look's Like Somthing When Worng,about<strong>500</strong> different ways.</h1>
+            <span class="subheading">Try refreshing this page, or Try to re-login..</span>
+        </div>
+
+        <div class="col-12">
+            <a href="{{ url_for('login.html') }}" class="btn">
+            <button type="button" class="btn btn-info">try-again</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
