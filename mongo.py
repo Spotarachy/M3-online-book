@@ -5,6 +5,6 @@ if os.path.exists("env.py"):
 
 
 MONGO_URI = os.environ.get("MONGO_URI")
-DATABASE = "myFirstDB"
-COLLECTION = "celebrities"
+DATABASE = "my1DB"
+COLLECTION = "ArtBook"
 
