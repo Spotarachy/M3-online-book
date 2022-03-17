@@ -42,28 +42,6 @@ if __name__ == "__main__":
         debug=True)
 
 
-class Note(db.Model):
-    id = db.Column(db.Integer,primary_key=True)
-    data = bd.Column(bd.String(10000))
-    data = db.Column(db.DataTime(timezone=True), default=func.now())
-    user_id =db.Column(db.Integer, db.ForeingKey('user.id'))
-
-class image(bd.Model, UserMixin):
-    id =db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(150), unique=True)
-    password = db.Column(db.String(150))
-    first_Name =db.Column(db.String(150))
-    notes = db.relationship('Note')
-
-
-class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(150), unique=True)
-    password = db.Column(db.String(150))
-    first_Name =db.Column(db.String(150))
-    notes = db.relationship('Note')
-
-
 bd = SQLAlchemy()
 DB_NAME = "database.db"
 
@@ -114,7 +92,7 @@ def sign_up():
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'Mario Wilson'
+    app.config['SECRET_KEY'] = ''
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NANE}'
 
 db.init_app(app)
