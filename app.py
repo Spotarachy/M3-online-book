@@ -1,18 +1,27 @@
-import os
+from os import path 
+if path.exists("env.py"):
+    import env
 from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
+from .env import MONGO_URI 
 from flask_login import UserMixin
 from flask import url_for 
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 # from .app import User
-# from . import db
+# from . import db.   
 
-db = SQLAlchemy()
-DB_NAME = "database.db"
 
 app = Flask(__name__, template_folder='website/template')
+
+
+app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
+
+
+DB_NAME = "database.db"
+
+
+MONGO = PyMongo(app)
 
 
 @app.route("/home")
@@ -22,6 +31,15 @@ def home():
 
 @app.route("/")
 def index():
+    ArtBook = MONGO.db.ArtBook.insert_one({
+    'first': 'Junji',
+    'last': 'Ito',
+    'comic_name': 'Uzumaki',
+    'Language': 'Japanese',
+    'page_numbers': '1043',
+    'date_sub': '31/01/2020'
+})
+    print(ArtBook)
     return render_template("base.html")
 
 
@@ -40,66 +58,3 @@ if __name__ == "__main__":
         host=os.environ.get("IP", "0.0.0.0"),
         port=int(os.environ.get("PORT", "5000")),
         debug=True)
-
-
-bd = PyMongo()
-DB_NAME = "database.db"
-
-app = ('app', __name__)
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        email = request.form.get('email')
-        password = request.form.get('password')
-    data = request.form
-    return render_template("login.html", boolean=True)
-
-@app.route('/logout')
-def logout():
-    return "<p>Logout</p>" 
-
-@auth.route('/sign-up', methods=['GET', 'POST'])
-def sign_up():
-    if request.method == "POST":
-        email = request.form.get("email")
-        first_name = reques.form.get('firstName')
-        password1 = reques.form.get('password1')
-        password2 = reques.form.get('password2')
-
-    if len(email) < 4:
-        flask('Email cant less then 3 chararcters.')
-    elif len(first_name) < 2:
-        flask('firstName cant less then 1 chararcters.')
-        
-    elif password1 != password2:
-        flask('password don\'t match.')
-
-    elif len(password1) < 6:
-        flask('Email cant less then 6 chararcters.')
-
-    else:
-        new_user = (email == email, first_name == first_name, password == generate_password_hash(password1, method='sha256'))
-
-        db.session.add(new_user)
-        db.session.commit()
-        flash('Accoount created!', category='success')
-
-    return redirect(url_for('views.home'))
-    
-        #add user to database
-    return render_template("sign_up.html")
-
-def create_app():
-    app = Flask(__name__)
-    app.config['SECRET_KEY'] = ''
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NANE}'
-
-db.init_app(app)
-    
-
-app.register(views, url_prefix='/')
-app.register(auth, url_prefix='/')
-    
-create_database(app)
-

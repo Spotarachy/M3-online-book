@@ -20,7 +20,7 @@ def mongo_connect(url):
 
 conn = mongo_connect(MONGO_URI)
 
-Spotarachy21Ronin
+
 coll = conn[DATABASE][COLLECTION]
 
 
