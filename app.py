@@ -42,7 +42,7 @@ if __name__ == "__main__":
         debug=True)
 
 
-bd = SQLAlchemy()
+bd = PyMongo()
 DB_NAME = "database.db"
 
 app = ('app', __name__)
