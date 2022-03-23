@@ -1,7 +1,7 @@
 {% extends "base.html" %} 
 {% block content %} 
 
-<form class="from-login"method="POST" accept="{{url_for('login')}}">
+<form class="from-login"method="POST" action="{{url_for('login')}}">
     <h3 align="center">Login</h3>
     <div class="form-group shadow p-3 mb-5 bg-body rounded">
         <label for="email">Email Address</label>
