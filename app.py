@@ -52,9 +52,23 @@ def index():
     print(ArtBook)
     return render_template("base.html",)
 
-
-@app.route("/login")
+##New
+@app.route("/login", methods=["GET, POST"])
 def login():
+    """
+    Allow users to log into their existing account, the function is to see if the username or email address already exists in the database and add accordingly to tell users this person already exists.
+    """
+    if request.method == "POST ":
+        user = mongo.db.users
+        current_user = user.find_one ({"email_address": request.form.get().lower()})
+        if check_password_hash (current_user["password"],request.form.get("password")):
+            session["email_address"] = request.form.get("email_address","username").lower()
+            return(url_for("profile", sign_up=session["email_address"]))
+
+        else:
+            Flash("The User/Email is not Correct")
+            return redirect(url_for("login"))
+
     return render_template("login.html")
 
 ##NEW
@@ -95,23 +109,11 @@ def sign_up():
 
     session["email_address"] = request.form.get("email_address").lower(),
     flash("Sing UP Successfull", category = "success")
-    return redirect(url_for("profile", sign_up = session["email_address"]))
+    return redirect(url_for("profile", sign_up=session["email_address"]))
            
     return render_template("sign_up.html")
 
 @app.route("r")
-
-  
-
-
-
-
-
-
-
-
-
-
 
 ## NEW
 ##comic_id if needed    \/
