@@ -1,5 +1,4 @@
-from os
-import path 
+import os import path 
 import pymongo
 from flask import (
      Flask, render_template, url_for, request, redirect)
@@ -14,6 +13,9 @@ if os.path.exists("env.py"):
 app = Flask(__name__, template_folder="website/template")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 MONGO = PyMongo(app)
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+os.environ['MONGO_URI'] = 'mongodb+srv://M3:Spotarachy21Ronin@xo21.hjgyv.mongodb.net/my1DB?retryWrites=true&w=majority'
 
 #NEW
 MONGO_URI = os.environ.get("MONGO_URI")
