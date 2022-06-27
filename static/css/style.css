@@ -14,12 +14,12 @@
 
 /*---Header---*/
 
-#imageonly{
-    background: url('https://static.posters.cz/image/750webp/31869.webp');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+body { 
+    background: url('/website/static/media/Background/main_image.jpg') no-repeat center center fixed;
     background-size: cover;
-
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: 'Lato';
 }
 /*---Nav----*/
 
