@@ -1,4 +1,4 @@
-![CI logo](//image/Theme.png)
+![CI logo](/static/media/hero/hero3.jpg)
 
 
 https://onlinbook-m-three.herokuapp.com/
@@ -42,7 +42,7 @@ This website was made as all the lovers of comic books you want to create a shar
 
   * [Images](#images)
     * [Pexels](#Pexels)
-    * []()
+    * [Marvel](#https://www.marvel.com/comics?&options%5Boffset%5D=0&totalcount=12)
     
     
 
@@ -112,17 +112,17 @@ By using our admin manager in a store managers sources to different back in fron
 
 ## Wire frames
 
-![Mockup](/media/framework/Screenshot%202022-03-23%20at%204.11.53%20PM.png)
+![Mockup](/media/framework/add-Comic.png)
 
 ### Mobile app
 
 This is an example of the email and password and login page on the mobile app easily downloaded and accessible when will available
 
+![Mockup](/media/framework/login.png)
 
 ### Layout of website
 
-![Mockup](/media/framework/Screenshot%202022-03-23%20at%204.39.40%20PM.png)
-
+![Mockup](/media/framework/homepage.png)
 
 From the layout of the website shoppers will be easily views of the list of products as individual products & thire details, these are quickly identified and items specified, and offers are clearly sense of direction through a drop-down menu for ease of use.
 

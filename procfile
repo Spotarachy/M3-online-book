@@ -1,1 +1,1 @@
-web: gunicorn onlinbook-m-three.wsgi:application
+web: gunicorn onlinebook-m-three.wsgi:application
