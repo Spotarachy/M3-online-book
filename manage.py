@@ -5,8 +5,8 @@ import sys
 
 
 def main():
-    """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'onlinebook-m-three.settings')
+    print('hello there');
+    os.environ.setdefault('Flask_SETTINGS_MODULE', 'Online.book.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -19,4 +19,8 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    main(
+        host=os.environ.get("IP", "0.0.0.0"),
+        port=int(os.environ.get("PORT", "5000")),
+        debug=True
+    )

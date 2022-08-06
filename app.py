@@ -11,9 +11,10 @@ from os import path
 if os.path.exists("env.py"):
     import env
 
-app = Flask(__name__, template_folder="website/template")
+app = Flask(__name__, template_folder="template")
 
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.config["MONGO_URI"] = 'mongodb+srv://M3:python21@xo21.hjgyv.mongodb.net/?retryWrites=true&w=majority'
+
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 MONGO = PyMongo(app)
@@ -40,11 +41,7 @@ def index():
     """
     Will take a user to the index page.
     """
-    ArtBook = MONGO.db.ArtBook.insert_one({
-   
-})
-    print(ArtBook)
-    return render_template("base.html",)
+    return render_template("index.html",)
 
 ##New
 @app.route("/login", methods=["GET", "POST"])
@@ -57,17 +54,34 @@ def login():
     if request.method == "POST":
         user = mongo.db.users
         current_user = user.find_one({"email_address": request.form.get().lower()})
-        if check_password_hash (current_user["password"],request.form.get("password")):
-            session["email_address"] = request.form.get("email_address","username").lower()
-            return(url_for("profile", sign_up=session["email_address"]))
+        if check_password_hash (current_user["password"],request.form.get("password")):session["email_address"] = request.form.get("email_address","username").lower()
+        return(url_for("profile", sign_up=session["email_address"]))
 
-        else:
-            Flash("The User/Email is not Correct")
-            return redirect(url_for("login"))
+    else:
+        Flask("The User/Email is not Correct")
+        return redirect(url_for("login"))
 
     return render_template("login.html")
 
 ##NEW
+
+
+@app.route("/add_comic", methods=["GET","POST"])
+def add_comic():
+    return render_template('add_comics.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
     """
@@ -87,7 +101,6 @@ def sign_up():
             flash("This User Email Address already exist", category="error")
             print('taking')
             return redirect(url_for("sign_up"))
-        
 
         elif len(email_address) < 3:
             flash("Email Address must be more then 3 Characters", category="error")
@@ -98,9 +111,10 @@ def sign_up():
             flash("Password must be more then  Characters", category="error")
             return redirect(url_for("sign_up"))
 
-        # elif password !=confirmed_password:
-        #     flash("Password Correct", category="error")
-        #     return redirect(url_for("sign_up"))
+        #this was commited out\/
+        elif password !=confirmed_password:
+            flash("Password Correct", category="error")
+            return redirect(url_for("sign_up"))
 
         sign_up = {
             "email_address": request.form.get("email").lower(),
@@ -109,9 +123,9 @@ def sign_up():
         
         user.insert_one(sign_up)
 
-        session["email_address"] = request.form.get("email").lower(),
-        flash("Sing UP Successfull", category = "success")
-        return redirect(url_for("index", sign_up=session["email_address"]))
+        session["email_address"] = request.form.get("email").lower(), flash("Sing UP Success full", category = "success")
+      
+    return redirect(url_for("index", sign_up=session["email_address"]))
         
     return render_template("sign_up.html")
 
