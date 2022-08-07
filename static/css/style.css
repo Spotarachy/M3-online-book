@@ -15,7 +15,7 @@
 /*---Header---*/
 
 body { 
-    background: url('/website/static/media/Background/main_image.jpg') no-repeat center center fixed;
+    background: url('/website/static/media/Background/download.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -23,56 +23,90 @@ body {
 }
 /*---Nav----*/
 
+.card {
+    width: 300px;
+    height: 400px;
+    background: #000;
+    overflow: hidden;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .25s ease;
+    backface-visibility: hidden;
+}
+.card ::hover {
+    transform: scale(.9);
+}
+.card:hover:after {
+    height: 280px;
+}
+.card:hover .con-text p {
+    margin-bottom: 0px;
+    opacity: 1;
+}
+.card:hover img {
+    transform: translate(0);
+    opacity: 1;
+}
+.card::after {
+    width: 100%;
+    content: '';
+    left: 0px;
+    bottom: 0px;
+    height: 150px;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(0,0,0,0,) 0%, rgba(0,0,0,1) 100%);
+    z-index: 20;
+    transition: all .25s ease;
+}
+.card img {
+    height: 100%;
+    z-index: 10;
+    transition: all .25 ease;
+}
 
-
-
-/*----PY---*/
-/*---JS----*/
-
-
-
+.card .con-text {
+    z-index: 30;
+    position: absolute;
+    bottom: 0px;
+    color: #fff;
+    padding: 20px;
+    padding-bottom: 30px;
+}
+.card .con-text p {
+    font-size: .8rem;
+    opacity: 0;
+    margin-bottom: -170px;
+    transition: all .25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.card .con-text p button {
+    padding: 7px 17px;
+    border-radius: 12px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: all .25 ease;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: .75rem;
+    outline: none;
+}
+.card .con-text p button:hover {
+    background-color: aliceblue;
+    color: #000;    
+}
 
 /*--Media--*/
 
-
-@media only screen and (min-width:690px){
-    .font-size: 80%;
-}
-
-@media screen and (min-width:570px){
-    max-width: 900px;
-    
-}    
-
-@media  screen and (max-width:790px){
-    
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-@media only screen and (min-width:992px) {
-    .navbar-nav {
-        position: fixed;
-        text-align: center;
-    }
-
-    .home-article {
-        width: 50%;
-    }
-    
-}
-@media screen and (max-width: 568px) {
-    .rounded {
-        max-width: 100%;
-        height: auto;
-    }
-    .home-article {
-        width: 100%;
-        margin-right: auto;
-        margin-left: auto;
-
-    }
-}
    .social-media-links {
     float: right;
     color: #;
@@ -178,4 +212,43 @@ body {
             backdrop: 'swal2-backdrop-hide',
             icon: 'swal2-icon-hide'
           }
+    }
+
+    @media only screen and (min-width:690px){
+        .font-size: 80%;
+    }
+    
+    @media screen and (min-width:570px){
+        max-width: 900px;
+        
+    }    
+    
+    @media  screen and (max-width:790px){
+        
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    @media only screen and (min-width:992px) {
+        .navbar-nav {
+            position: fixed;
+            text-align: center;
+        }
+    
+        .home-article {
+            width: 50%;
+        }
+        
+    }
+    @media screen and (max-width: 568px) {
+        .rounded {
+            max-width: 100%;
+            height: auto;
+        }
+        .home-article {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+    
+        }
     }
